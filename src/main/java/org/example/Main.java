@@ -12,15 +12,15 @@ public class Main {
         SoftwareDeveloper softwareDeveloper1 = new SoftwareDeveloper(1, "Alex", "Davies", 27, 6000, "Test", manager1, "Selenium", 7);
         SoftwareDeveloper softwareDeveloper2 = new SoftwareDeveloper(2, "Oliver", "Wilson", 32, 6250, "Development", manager2, "Selenium", 7);
         SoftwareDeveloper newSoftwareDeveloper = new SoftwareDeveloper(3, "Charlie", "Evans", 38, 6600, "Development", manager2, "Selenium", 7);
-        Employee newEmployee = new Employee();
-        Employee newEmployee2 = new Employee();
+        Employee newEmployee = new Employee(3, "Max", "Adams", 34, 6000, "Unknown");
+        Employee newEmployee2 = new Employee(3, "Mario", "Trix", 30, 6000, "Unknown");
         System.out.println("###########################################################");
         manager1.getNumberOfEmployeesSupervised();
         manager1.hireEmployee(newSoftwareDeveloper);
         manager1.getNumberOfEmployeesSupervised();
         System.out.println("###########################################################");
         System.out.println("SoftDev 1 salary : "+ softwareDeveloper1.getSalary());
-       manager1.increaseSalary(softwareDeveloper1, 500);
+        manager1.increaseSalary(softwareDeveloper1, 500);
         softwareDeveloper1.getSalaryPayment();
         softwareDeveloper2.takeABreak();
         System.out.println("###########################################################");
@@ -37,7 +37,7 @@ public class Main {
         manager2.getEmployees();
         manager2.getSalaryPayment();
         manager2.takeABreak();
-       manager2.fireEmployee(newSoftwareDeveloper);
+        manager2.fireEmployee(newSoftwareDeveloper);
         manager2.getNumberOfEmployeesSupervised();
         manager2.getEmployees();
         System.out.println("###########################################################");
@@ -47,6 +47,8 @@ public class Main {
         manager3.hireEmployee(newEmployee2);
         manager3.getNumberOfEmployeesSupervised();
         manager3.getEmployees();
+
+
 
     }
 }

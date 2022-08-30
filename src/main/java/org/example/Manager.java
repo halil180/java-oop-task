@@ -15,7 +15,7 @@ public class Manager extends Employee implements IManager{
     private  String department;
 
 
-    ArrayList<String> employees = new ArrayList<String>();
+    ArrayList<Employee> employees = new ArrayList<Employee>();
 /////
 
 
@@ -51,6 +51,7 @@ public class Manager extends Employee implements IManager{
 
     @Override
     public String getSalaryPayment() {
+        System.out.println(this.firstName + " " + this.lastName +  "  got " +this.salary + " CHF salary payment!");
         return this.firstName + " " + this.lastName +  " got 6500.0 CHF salary payment!";
     }
     @Override
@@ -60,22 +61,33 @@ public class Manager extends Employee implements IManager{
 
     public void getEmployees() {
 
+        System.out.println(this.firstName +  "  " +this.lastName + "s Employees");
+        for(Employee employees : employees){
+            System.out.println(employees.getFirstName() + " " + employees.getLastName());
+        }
+
     }
 
     
 
-    public void increaseSalary(SoftwareDeveloper softwareDeveloper1, int i) {
+    public void increaseSalary(SoftwareDeveloper softwareDeveloper1, double i) {
         super.getSalaryPayment();
+
         this.salary = this.salary + i;
-        System.out.println(softwareDeveloper1 + "s salary " +  " is increased" + i +  "CHF" + "New Salary :" +  this.salary);
+        System.out.println(softwareDeveloper1.getFirstName()+ " " + softwareDeveloper1.getLastName()+ "s salary " +  " is increased"   + i +"  CHF" + "New Salary :    " + this.salary + i);
     }
 
-    public void fireEmployee(SoftwareDeveloper newSoftwareDeveloper) {
+    public void fireEmployee(Employee employee) {
+        employees.remove(employee);
+
+        System.out.println( employee.getFirstName() + " is fired!");
+
     }
 
     public void hireEmployee(Employee newEmployee) {
-        employees.add(String.valueOf(newEmployee));
-       // System.out.println( "added "  + employees);
+        employees.add(newEmployee);
+
+        System.out.println(newEmployee.getFirstName() + " is hired");
     }
 
 
